@@ -1,89 +1,97 @@
 export interface ApproachStep {
-  step: number;
-  title: string;
-  body: string;
+  step: number
+  title: string
+  body: string
 }
 
 export interface ImageGridItem {
-  src: string;
-  caption: string;
+  src: string
+  caption: string
 }
 
 export interface Callout {
-  emoji: string;
-  text: string;
+  emoji: string
+  text: string
 }
 
 export interface CaseStudy {
-  slug: string;
-  challenge: string;
-  pullQuote: string;
-  approach: ApproachStep[];
-  imageGrid: ImageGridItem[];
-  learned: string[];
-  callout: Callout;
+  slug: string
+  challenge: string
+  pullQuote: string
+  approach: ApproachStep[]
+  imageGrid: ImageGridItem[]
+  learned: string[]
+  callout: Callout
 }
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: "mosaik",
     challenge:
-      "Agencies rarely slow down long enough to do research well. At Mosaik, I was brought in to help close the gap between what clients asked for and what their users actually needed — across verticals I had to learn fast.",
-    pullQuote:
-      "The brief is never the brief. The real problem is always one conversation deeper.",
+      "Agency work is a different skill. You're designing for clients you didn't choose, on timelines you didn't set, for users you've never met. Mosaik taught me how to do good work inside those constraints — and when to push back.",
+    pullQuote: "Constraints are just a different kind of brief.",
     approach: [
       {
         step: 1,
-        title: "Immerse in each client's world",
-        body: "Before touching Figma, I spent time with each client's users and stakeholders to understand the real constraints — not the ones in the brief.",
+        title: "Client intake",
+        body: "Each project started with a structured discovery: business goals, user assumptions, success metrics, timeline reality.",
       },
       {
         step: 2,
-        title: "Synthesise fast, share early",
-        body: "I built lightweight research readouts that non-designers could act on within a week, not a month.",
+        title: "Research lite",
+        body: "Not every brief allows for full research cycles. I learned to do meaningful research in compressed time — desk research, proxy users, competitor analysis, heuristic review.",
       },
       {
         step: 3,
-        title: "Design to the constraint",
-        body: "Agency timelines are real. I learned to make high-quality decisions under pressure and advocate for the minimum viable research needed.",
+        title: "Design and ship",
+        body: "Figma-first. Component systems. Working in a shared library. Handoff that developers could actually use.",
+      },
+      {
+        step: 4,
+        title: "Reflection",
+        body: "What I learned most at Mosaik: the relationship between the designer and the brief matters as much as the design itself.",
       },
     ],
     imageGrid: [
       { src: "/images/portfolio/mosaik-01.jpg", caption: "Discovery workshop output" },
-      { src: "/images/portfolio/mosaik-02.jpg", caption: "Affinity mapping session" },
+      { src: "/images/portfolio/mosaik-02.jpg", caption: "Component library in Figma" },
       { src: "/images/portfolio/mosaik-03.jpg", caption: "Final prototype handoff" },
     ],
     learned: [
-      "Speed and quality aren't opposites — they require different rituals.",
-      "Client trust is built by being honest about what the research can't tell you.",
-      "Good agency design means leaving behind something the team can maintain.",
+      "Speed and quality are not opposites — but they require different strategies. I got faster at making decisions, and better at knowing which ones to revisit.",
+      "Working across multiple clients in parallel sharpened my ability to context-switch without losing the thread of each project.",
     ],
     callout: {
-      emoji: "🏃",
-      text: "I shipped more in 12 months here than in any other role. The pressure was real, and so were the learnings.",
+      emoji: "🏢",
+      text: "The best training for a young designer is probably an agency. Nothing else exposes you to as many problem types as fast.",
     },
   },
+
   {
     slug: "m2m",
     challenge:
-      "M2M exists to create human connection — but their internal processes made it hard to scale that mission without burning out the volunteers who ran it. The design challenge was less about a product and more about a system.",
-    pullQuote:
-      "The people running this organisation cared deeply. My job was to make sure the structure cared back.",
+      "M2M is built around a simple, radical premise: human connection matters, and it can be designed for. Working with a non-profit means the brief isn't a product feature or a revenue target — it's a person's sense of belonging.",
+    pullQuote: "Design for the margin, and you design for everyone.",
     approach: [
       {
         step: 1,
-        title: "Shadow the volunteers",
-        body: "I spent time with the people doing the work, not just the leadership. The pain was mostly invisible until you were in the room.",
+        title: "Community research",
+        body: "Interviews with community members to understand moments of connection and moments of isolation. Where does the system fail people?",
       },
       {
         step: 2,
-        title: "Map the service, not the app",
-        body: "The solution wasn't a better interface — it was a clearer flow of who does what, when, and why.",
+        title: "Service mapping",
+        body: "Mapped the full service journey — not just the app touchpoints but the human moments around them.",
       },
       {
         step: 3,
-        title: "Co-design with the community",
-        body: "Every design decision went back to the people it would affect. That slowed things down in the best way.",
+        title: "Co-design",
+        body: "Ran participatory design sessions with community members. The people closest to the problem have the most useful ideas.",
+      },
+      {
+        step: 4,
+        title: "Delivery",
+        body: "Prototypes, documentation, and handoff to the M2M team.",
       },
     ],
     imageGrid: [
@@ -92,36 +100,40 @@ export const caseStudies: CaseStudy[] = [
       { src: "/images/portfolio/m2m-03.jpg", caption: "Volunteer journey map" },
     ],
     learned: [
-      "Non-profit doesn't mean non-complex. The constraints are just different.",
-      "The community holds the answers — your job is to create conditions for them to surface.",
-      "Service design is humbling. There's always more of the system you haven't seen yet.",
+      "Non-profit design work radically recalibrated my instincts about what 'success' means. Engagement metrics don't capture belonging.",
+      "Participatory design is slower. It's also more accurate. And the people you design with feel it.",
     ],
     callout: {
       emoji: "🤝",
-      text: "This project reminded me why I got into design. Not for the outputs, but for the conversations that make them possible.",
+      text: "This project reminded me why I got into design in the first place.",
     },
   },
+
   {
     slug: "carrots-lab",
     challenge:
-      "Carrots Lab was building in AI before it was everywhere. The challenge was doing research fast enough to be useful in a startup cycle — without sacrificing the rigour that makes research worth doing.",
-    pullQuote:
-      "In a startup, the window for research is short. You learn to open it fast and close it cleanly.",
+      "Carrots Lab is a startup lab — which means the product is always half-formed, the user is always hypothetical, and the timeline is always yesterday. My job was to bring research and design rigour into an environment that moves faster than either.",
+    pullQuote: "The best research isn't the most thorough — it's the most timely.",
     approach: [
       {
         step: 1,
-        title: "Embed in the sprint",
-        body: "I matched my research cadence to the product cycle rather than working around it. Weekly insights, not monthly reports.",
+        title: "Research in sprints",
+        body: "Weekly research loops: question → method → insight → decision. No waiting for a 'research phase'. Research as continuous input.",
       },
       {
         step: 2,
-        title: "Prototype to learn, not to show",
-        body: "Early prototypes were conversation starters with users — rough on purpose, specific in what they were testing.",
+        title: "Synthesis as design",
+        body: "Insight frameworks and synthesis artefacts became design tools — not deliverables for a report, but shared understanding for the team.",
       },
       {
         step: 3,
-        title: "Build the system, not just the screen",
-        body: "I spent time establishing design language and component logic so the team could move faster without me in every decision.",
+        title: "Rapid prototyping",
+        body: "Lo-fi → feedback → iterate. Sometimes the same day.",
+      },
+      {
+        step: 4,
+        title: "System thinking",
+        body: "Even in early-stage products, I advocated for component systems. The cost of inconsistency compounds fast in startups.",
       },
     ],
     imageGrid: [
@@ -130,74 +142,84 @@ export const caseStudies: CaseStudy[] = [
       { src: "/images/portfolio/carrots-03.jpg", caption: "Design system foundations" },
     ],
     learned: [
-      "Good startup research is ruthlessly prioritised. Not everything can be tested.",
-      "AI products need even more user grounding, not less. The tech moves fast; people don't.",
-      "System thinking from day one saves weeks later.",
+      "Startups don't have time for research theatre. Every research activity has to earn its place by informing a real decision.",
+      "Moving fast doesn't mean skipping thinking. It means making thinking faster.",
     ],
     callout: {
       emoji: "🥕",
-      text: "Startups are where you learn what you're actually made of as a designer. I found out I'm pretty good at ambiguity.",
+      text: "This is where I learned to make research feel useful to people who've never valued it before.",
     },
   },
+
   {
     slug: "vandewiele",
     challenge:
-      "Vandewiele's internal sales team was using a backoffice CRM that hadn't kept pace with the complexity of their work. The interface was cluttered, the data flows were opaque, and the team had workarounds for everything.",
-    pullQuote:
-      "Enterprise UX is about respect — for the expertise of the people using the tool, and for the complexity of what they do.",
+      "Vandewiele makes industrial weaving machinery — precision engineering, global scale, deeply technical sales process. Their backoffice CRM had grown organically for years. It worked. Barely. The users were experienced, expert, and very frustrated. My brief was to redesign without breaking what they already knew.",
+    pullQuote: "Good enterprise UX isn't about making things pretty. It's about making expertise feel effortless.",
     approach: [
       {
         step: 1,
-        title: "Learn the domain",
-        body: "Industrial machinery sales is specific. I spent the first weeks just listening — not to find problems, but to understand the language.",
+        title: "Immersion",
+        body: "Two weeks of shadowing. Watching sales reps move through their day. Listening to the workarounds they'd built. Mapping the cognitive load.",
       },
       {
         step: 2,
-        title: "Audit the workarounds",
-        body: "Every sticky note and spreadsheet next to the CRM was a design failure. I catalogued them all before proposing anything.",
+        title: "Problem framing",
+        body: "Identified 47 distinct task types. Clustered into 6 pain areas. The biggest: information retrieval — finding the right order, the right client, the right spec — across disconnected data.",
       },
       {
         step: 3,
-        title: "Design for clarity, not novelty",
-        body: "Neumorphic styling was the visual direction, but the real work was information architecture — making complex data legible at a glance.",
+        title: "Design language",
+        body: "Explored neumorphic design as a middle ground between flat (too clinical for an industrial brand) and skeuomorphic (too heavy). The tactile quality of neumorphism suited a company that makes things.",
+      },
+      {
+        step: 4,
+        title: "Validation",
+        body: "3 rounds of prototype testing with actual Vandewiele sales reps. Critical finding: contrast and state clarity had to be rigorously tested — neumorphism can fail badly for users with visual differences.",
       },
     ],
     imageGrid: [
       { src: "/images/portfolio/vandewiele-01.jpg", caption: "Legacy interface audit" },
       { src: "/images/portfolio/vandewiele-02.jpg", caption: "IA restructure mapping" },
       { src: "/images/portfolio/vandewiele-03.jpg", caption: "Final neumorphic UI" },
+      { src: "/images/portfolio/vandewiele-team.jpg", caption: "Vandewiele sales team walkthrough" },
     ],
     learned: [
-      "Domain expertise in the room changes everything. Never design without it.",
-      "Neumorphic design is beautiful and unforgiving — accessibility requires extra attention.",
-      "The best enterprise UX is invisible. Users should feel capable, not impressed.",
+      "Enterprise users have muscle memory built over years. Any redesign has to honour those patterns first — you earn the right to change things slowly.",
+      "Neumorphic design is polarising. The lighting direction, shadow depth, and contrast ratios are not stylistic choices — they're functional requirements. I spent more time on accessibility in this project than any other.",
+      "The most useful feedback came 20 minutes into a session, not in the first five. The initial responses were polite. Then people started telling me the truth.",
     ],
     callout: {
       emoji: "🏭",
-      text: "This was my first fully enterprise project. I underestimated the complexity and overdelivered because of it.",
+      text: "This is still the most technically complex UX challenge I've worked on. And the project I return to when I want to remind myself why research before design isn't optional.",
     },
   },
+
   {
     slug: "jora",
     challenge:
-      "Jora connects millions of people to jobs across Asia-Pacific. Working on a platform at that scale means your design decisions affect people in real, material ways — job offers, income, livelihoods.",
-    pullQuote:
-      "At scale, edge cases aren't edge cases anymore. They're millions of people.",
+      "Jora is a job search platform serving millions of users across Asia-Pacific. At that scale, a 1% UX improvement affects hundreds of thousands of people. The stakes of small decisions are enormous.",
+    pullQuote: "At scale, there are no minor interactions.",
     approach: [
       {
         step: 1,
-        title: "Root every decision in data",
-        body: "With millions of sessions to learn from, intuition had to be backed. I worked closely with data teams to validate direction before committing.",
+        title: "Understanding the user",
+        body: "Job seekers have a specific emotional state: hope, anxiety, urgency. The design has to hold all of that.",
       },
       {
         step: 2,
-        title: "Design for the whole spectrum",
-        body: "Jora's users range from first-time job seekers to experienced professionals. The design had to work for both without condescending to either.",
+        title: "Research and insight",
+        body: "Analysed user behaviour data alongside qualitative research. Where are people dropping off? What are they actually looking for?",
       },
       {
         step: 3,
-        title: "Ship, measure, iterate",
-        body: "Features went through careful A/B testing. I learned to separate what I thought would work from what the data showed.",
+        title: "Iteration at scale",
+        body: "A/B testing is a design tool at this scale, not an afterthought. Learned to design for testability.",
+      },
+      {
+        step: 4,
+        title: "Cross-functional collaboration",
+        body: "Working inside a large product team at SEEK Group — alignment, documentation, and communication as core skills.",
       },
     ],
     imageGrid: [
@@ -206,89 +228,97 @@ export const caseStudies: CaseStudy[] = [
       { src: "/images/portfolio/jora-03.jpg", caption: "A/B test results review" },
     ],
     learned: [
-      "Scale is humbling. Your assumptions don't survive contact with a million users.",
-      "Cross-functional alignment at product companies is a design skill in itself.",
-      "The most impactful changes are often the least glamorous.",
+      "Data tells you what is happening. Research tells you why. You need both — and they have to talk to each other.",
+      "Designing for Asia-Pacific means designing for incredible user diversity — devices, contexts, languages, literacies.",
     ],
     callout: {
-      emoji: "🌏",
-      text: "Jora taught me how to operate inside a large organisation without losing my design voice.",
+      emoji: "💼",
+      text: "Jora taught me that good UX is invisible to the people it's helping, and only visible when it's missing.",
     },
   },
+
   {
     slug: "little-big-futures",
     challenge:
-      "What does it mean to design for a future that doesn't exist yet? Little Big Futures was an exploration of speculative design and digital fabrication — building artefacts from imagined worlds to ask better questions about this one.",
-    pullQuote:
-      "Speculative design isn't about prediction. It's about expanding the space of what people think is possible.",
+      "Speculative design asks a question conventional design doesn't: what if we design not for the world as it is, but as it might be? Little Big Futures was an exploration of children's futures — built with digital fabrication, research, and imagination.",
+    pullQuote: "The future isn't a destination. It's a design decision.",
     approach: [
       {
         step: 1,
-        title: "Research futures, not trends",
-        body: "I started with futures studies methodology — mapping signals, drivers, and scenarios before touching any materials.",
+        title: "Futures research",
+        body: "Explored signals of change in education, childhood, and technology. Mapped trajectories into possible futures.",
       },
       {
         step: 2,
-        title: "Make the future tangible",
-        body: "Digital fabrication turned abstract scenarios into physical artefacts people could hold, question, and react to.",
+        title: "Speculative scenarios",
+        body: "Developed three distinct future scenarios and designed artefacts from those futures — objects, interfaces, experiences.",
       },
       {
         step: 3,
-        title: "Exhibit and listen",
-        body: "The exhibition was itself a research method. Watching people interact with the artefacts told me more than any survey could.",
+        title: "Fabrication",
+        body: "Used digital fabrication tools to make the speculative real. Artefacts that you could hold made the futures feel less abstract.",
+      },
+      {
+        step: 4,
+        title: "Exhibition",
+        body: "Shown publicly. Visitors engaged with the artefacts and reacted to the futures they represented.",
       },
     ],
     imageGrid: [
       { src: "/images/portfolio/little-big-futures-01.jpg", caption: "Futures mapping workshop" },
       { src: "/images/portfolio/little-big-futures-02.jpg", caption: "Fabrication process" },
-      { src: "/images/portfolio/little-big-futures-03.jpg", caption: "Exhibition installation" },
+      { src: "/images/portfolio/little-big-futures-exhibit.jpg", caption: "Exhibition installation" },
     ],
     learned: [
-      "Design can be a form of argument — not just a solution.",
-      "Physical artefacts create conversations that screens can't.",
-      "The future is more useful as a provocation than a prediction.",
+      "Making speculation tangible changes how people engage with it. An object from a possible future is more powerful than a slide about it.",
     ],
     callout: {
       emoji: "🔮",
-      text: "This project expanded my idea of what design can do. I came back to product work with questions I hadn't thought to ask before.",
+      text: "Speculative design is the most honest form of design research. It admits that we don't know what's coming — and designs with that.",
     },
   },
+
   {
     slug: "game-uxr",
     challenge:
-      "Forspoken launched to polarising reviews in 2023. Players and critics disagreed on almost everything. As a UX researcher and a gamer, I wanted to understand the disconnect — not through opinion, but through structured inquiry.",
-    pullQuote:
-      "Games are one of the most complex UX systems humans have built. Studying them seriously changes how you see everything else.",
+      "Forspoken was a PlayStation exclusive that divided players and critics alike. The magic traversal system was genuinely innovative — but reviewers said the story felt distant, the protagonist hard to connect with. I wanted to understand why. Not as a critic — as a UX researcher. What's happening in a player's head when a game loses them before the story lands?",
+    pullQuote: "How people play tells us everything about how people live.",
     approach: [
       {
         step: 1,
-        title: "Play with intention",
-        body: "I played Forspoken as both a player and a researcher — keeping session logs, annotating moments of friction, and noting emotional responses.",
+        title: "Protocol design",
+        body: "Recruited 7 participants with varied gaming backgrounds. Designed 2-hour play sessions with a specific focus: the first 20 minutes, the first major traversal unlock, and the first emotional beat in the narrative.",
       },
       {
         step: 2,
-        title: "Apply UX frameworks to game systems",
-        body: "I mapped the game's onboarding, feedback loops, and narrative scaffolding against UX heuristics — finding the gaps critics felt but couldn't name.",
+        title: "Session structure",
+        body: "Retrospective think-aloud: participants played freely, then walked me back through key moments. I was listening for what they noticed — and what they didn't.",
       },
       {
         step: 3,
-        title: "Synthesise across the player spectrum",
-        body: "I gathered reactions from players across experience levels to understand where the disconnect was systemic vs. personal preference.",
+        title: "Analysis",
+        body: "Used affinity mapping to find patterns across sessions. Synthesised into a three-part framework: Curiosity · Agency · Attachment. Players who felt curious got engaged. Players who felt agency got invested. Only then could attachment form.",
+      },
+      {
+        step: 4,
+        title: "Insight translation",
+        body: "Translated findings into design recommendations — framed not as game design notes but as UX principles applicable beyond gaming.",
       },
     ],
     imageGrid: [
       { src: "/images/game-uxr/forspoken-01.png", caption: "Session log annotations" },
-      { src: "/images/game-uxr/forspoken-02.png", caption: "Heuristic evaluation mapping" },
-      { src: "/images/game-uxr/forspoken-03.png", caption: "Player experience spectrum" },
+      { src: "/images/game-uxr/forspoken-02.png", caption: "Affinity map — Curiosity · Agency · Attachment" },
+      { src: "/images/game-uxr/forspoken-03.png", caption: "Heuristic evaluation mapping" },
+      { src: "/images/game-uxr/forspoken-hero.png", caption: "Forspoken traversal system" },
     ],
     learned: [
-      "Games surface UX problems that enterprise software hides behind tolerance.",
-      "Polarising reactions are almost always a sign of misaligned expectations, not bad design.",
-      "Play is serious research material. Treat it that way.",
+      "The first 20 minutes of a game are its onboarding. Forspoken front-loads lore and cutscenes before players have any agency — and players who haven't yet 'earned' the story mentally opt out of it.",
+      "Players who discovered their own path through the traversal system — even if they did the same thing as everyone else — reported significantly higher enjoyment. The feeling of discovery matters more than the discovery itself.",
+      "This research changed how I think about product onboarding entirely. Capability before attachment. Give people a win before you ask for investment.",
     ],
     callout: {
       emoji: "🎮",
-      text: "This is ongoing because the questions keep getting better. Forspoken was the starting point, not the destination.",
+      text: "Gaming is the most honest stress test of a design system I know. Players don't read documentation. They just try things. Watching them is revelatory.",
     },
   },
-];
+]
