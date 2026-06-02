@@ -1,34 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:      var(--font-inter);
+  --font-lora:      var(--font-lora);
+  --font-mono:      var(--font-jetbrains);
 
   --animate-shake: shake 0.4s ease-in-out;
+  --animate-blink: blink 1s step-end infinite;
 
   @keyframes shake {
     0%, 100% { transform: translateX(0); }
     20%, 60% { transform: translateX(-8px); }
     40%, 80% { transform: translateX(8px); }
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
   }
 }
 
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #37352f;
+  background: #fafaf8;
+  line-height: 1.75;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 500;
+}
+
+/* ── Utility classes ───────────────────────────────────────────────────────── */
+
+.font-lora     { font-family: var(--font-lora), Georgia, serif; }
+.font-jetbrains { font-family: var(--font-jetbrains), 'Courier New', monospace; }
+.font-inter    { font-family: var(--font-inter), system-ui, sans-serif; }
+
+/* Hide scrollbar for filter chips */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
 }
