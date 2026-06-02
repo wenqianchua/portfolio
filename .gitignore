@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Large portfolio images — restore via: bash scripts/extract-figma-images.sh
+/public/images/portfolio/*.jpg
+/public/images/portfolio/*.png
+/public/images/game-uxr/*.png
+/public/images/game-uxr/*.jpg
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

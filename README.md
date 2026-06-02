@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wen Qian Chua — Portfolio
 
-## Getting Started
+Next.js 15 · TypeScript · Tailwind CSS v4 · Framer Motion
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Restoring images
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Images are excluded from git (large files). To restore them from the original Figma source files:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Place `Porfolio.fig` and `Game_UXR.fig` in the project root
+2. Run:
+   ```bash
+   bash scripts/extract-figma-images.sh
+   ```
 
-## Learn More
+This extracts all portfolio and game research images to `public/images/`.
 
-To learn more about Next.js, take a look at the following resources:
+> **Note:** No personal about photo was found in the .fig files. Add one manually as `public/images/about-hero.jpg`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Branch workflow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `main` — production (Vercel deploys from here)
+- `dev` — integration branch, all PRs merge here
+- `feature/*` — individual feature branches
 
-## Deploy on Vercel
+## Password
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Case studies are password-protected. Set `PORTFOLIO_PASSWORD` in `.env.local`.
+See `.env.example` for all required variables.
