@@ -79,18 +79,31 @@ export function FullCaseStudy({ slug }: Props) {
           </div>
         </section>
 
-        <section className="mb-14">
-          <p className={`font-jetbrains text-[10px] uppercase tracking-widest ${muted} mb-6`}>
-            What I Learned
-          </p>
-          <ul className="flex flex-col gap-4">
-            {cs.learned.map((item, i) => (
-              <li key={i} className="flex gap-4">
-                <span style={{ color: accent }} className="flex-shrink-0 mt-1 text-sm">—</span>
-                <p className={`text-sm leading-relaxed ${dark ? 'text-zinc-400' : 'text-zinc-600'}`}>{item}</p>
-              </li>
-            ))}
-          </ul>
+        <section
+          className="mb-14 relative rounded-xl overflow-hidden"
+          style={dark && work.slug === 'game-uxr' ? {
+            backgroundImage: `url('/images/game-uxr/forspoken-hero.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          } : undefined}
+        >
+          {/* Clouds texture overlay — game-uxr only */}
+          {dark && work.slug === 'game-uxr' && (
+            <div className="absolute inset-0 bg-[#0a0a0a]" style={{ opacity: 0.96 }} />
+          )}
+          <div className="relative z-10 px-1 py-6">
+            <p className={`font-jetbrains text-[10px] uppercase tracking-widest ${muted} mb-6`}>
+              What I Learned
+            </p>
+            <ul className="flex flex-col gap-4">
+              {cs.learned.map((item, i) => (
+                <li key={i} className="flex gap-4">
+                  <span style={{ color: accent }} className="flex-shrink-0 mt-1 text-sm">—</span>
+                  <p className={`text-sm leading-relaxed ${dark ? 'text-zinc-400' : 'text-zinc-600'}`}>{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
         <NotionCallout emoji={cs.callout.emoji} variant={dark ? 'dark' : 'yellow'}>
