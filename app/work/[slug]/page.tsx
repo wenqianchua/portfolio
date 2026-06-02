@@ -1,7 +1,14 @@
-export default function WorkPreviewPage({ params }: { params: { slug: string } }) {
-  return (
-    <main className="mx-auto max-w-4xl px-6 py-24">
-      Work preview: {params.slug}
-    </main>
-  );
+import { works } from '@/data/works'
+import WorkSlugClient from '@/components/sections/WorkSlugClient'
+
+export function generateStaticParams() {
+  return works.map(w => ({ slug: w.slug }))
+}
+
+export default function WorkSlugPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  return <WorkSlugClient params={params} />
 }
