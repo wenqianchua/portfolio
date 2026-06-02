@@ -28,6 +28,7 @@ export const works: WorkItem[] = [
     teaser:
       "What does it take to do good design inside a fast-paced agency? This is the work I'm most proud of shipping under pressure.",
     coverColor: "bg-amber-50",
+    coverImage: "/images/portfolio/mosaik-team.jpg",
     darkTheme: false,
   },
   {
