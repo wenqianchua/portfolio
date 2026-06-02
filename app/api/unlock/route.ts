@@ -1,14 +1,16 @@
-import { NextRequest, NextResponse } from "next/server";
-import { siteConfig } from "@/data/config";
-import { unlock } from "@/lib/auth";
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(req: NextRequest) {
-  const { password, slug } = await req.json();
+  const { password } = await req.json()
+  const correct = process.env.PORTFOLIO_PASSWORD
 
-  if (password !== siteConfig.password) {
-    return NextResponse.json({ error: "Incorrect password" }, { status: 401 });
+  if (!correct) {
+    return NextResponse.json({ success: false, error: 'Not configured' }, { status: 500 })
   }
 
-  await unlock(slug);
-  return NextResponse.json({ ok: true });
+  if (password === correct) {
+    return NextResponse.json({ success: true })
+  }
+
+  return NextResponse.json({ success: false }, { status: 401 })
 }

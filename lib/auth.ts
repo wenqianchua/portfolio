@@ -1,18 +1,16 @@
-import { cookies } from "next/headers";
+const SESSION_KEY = 'wen_portfolio_unlocked'
 
-const SESSION_COOKIE = "portfolio_session";
-const SESSION_VALUE = "unlocked";
-
-export async function isUnlocked(slug: string): Promise<boolean> {
-  const store = await cookies();
-  return store.get(`${SESSION_COOKIE}_${slug}`)?.value === SESSION_VALUE;
+export function isUnlocked(): boolean {
+  if (typeof window === 'undefined') return false
+  return sessionStorage.getItem(SESSION_KEY) === 'true'
 }
 
-export async function unlock(slug: string): Promise<void> {
-  const store = await cookies();
-  store.set(`${SESSION_COOKIE}_${slug}`, SESSION_VALUE, {
-    httpOnly: true,
-    sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 7,
-  });
+export function setUnlocked(): void {
+  if (typeof window === 'undefined') return
+  sessionStorage.setItem(SESSION_KEY, 'true')
+}
+
+export function clearUnlocked(): void {
+  if (typeof window === 'undefined') return
+  sessionStorage.removeItem(SESSION_KEY)
 }
