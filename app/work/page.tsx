@@ -1,10 +1,14 @@
-import type { Metadata } from 'next'
+import { WorkSection } from '@/components/sections/WorkSection'
 
-export const metadata: Metadata = {
-  title: 'Work',
+export const metadata = {
+  title: 'Work — Wen Qian Chua',
   description: 'Selected projects across UX research, product design, and speculative design.',
 }
 
 export default function WorkPage() {
-  return <main className="min-h-screen bg-[#fafaf8] pt-20 px-6">Work — coming soon</main>
+  return (
+    <main className="min-h-screen bg-[#fafaf8] pt-20">
+      <WorkSection />
+    </main>
+  )
 }
