@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import "@fontsource/lora/400.css";
-@import "@fontsource/lora/400-italic.css";
-@import "@fontsource/jetbrains-mono/400.css";
 
 :root {
   --background: #ffffff;
@@ -13,21 +10,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-lora: 'Lora', serif;
-  --font-jetbrains: 'JetBrains Mono', monospace;
 
   --animate-shake: shake 0.4s ease-in-out;
-  --animate-blink: blink 1s step-end infinite;
 
   @keyframes shake {
     0%, 100% { transform: translateX(0); }
     20%, 60% { transform: translateX(-8px); }
     40%, 80% { transform: translateX(8px); }
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
   }
 }
 
@@ -43,6 +32,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.font-lora { font-family: 'Lora', serif; }
-.font-jetbrains { font-family: 'JetBrains Mono', monospace; }
