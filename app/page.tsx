@@ -1,11 +1,18 @@
-import { WorkSection } from '@/components/sections/WorkSection'
+import type { Metadata } from 'next'
 
-// Keyboard hero (feature/keyboard-hero) will replace this shell once merged.
-// For now, WorkSection is wired in so the grid is testable standalone.
+export const metadata: Metadata = {
+  title: 'Wen Qian Chua — UX Researcher & Product Designer',
+}
+
+// Keyboard hero + work grid (feature/keyboard-hero adds full interactive UI)
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#fafaf8]">
-      <WorkSection />
+      <div className="max-w-[720px] mx-auto px-6 pt-24">
+        <p className="font-lora text-lg text-[#37352f]">
+          Portfolio loading — merge feature branches into dev to see full UI.
+        </p>
+      </div>
     </main>
   )
 }

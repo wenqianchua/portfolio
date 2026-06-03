@@ -9,8 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/lora": "^5.2.8",
+    "@next/font": "^14.2.15",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
