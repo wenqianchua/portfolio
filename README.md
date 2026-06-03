@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wen Qian Chua — Portfolio
 
-## Getting Started
+Next.js 15 · TypeScript · Tailwind CSS v4 · Framer Motion
 
-First, run the development server:
+---
+
+## Dev workflow
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git checkout dev
+git checkout -b feature/your-thing
+# ... make changes ...
+git push origin feature/your-thing
+# Open PR → dev on GitHub
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Merge to production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git checkout dev && git pull
+git checkout main && git merge dev && git push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vercel auto-deploys `main` → production.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Update resume link (no code needed)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel → Project Settings → Environment Variables → `NEXT_PUBLIC_RESUME_LINK`
+Redeploy (or push any commit to trigger it).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Update password (no code needed)
 
-## Deploy on Vercel
+Vercel → Project Settings → Environment Variables → `PORTFOLIO_PASSWORD`
+Redeploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Add a new project
+
+1. Edit `/data/works.ts` — add a `WorkItem`
+2. Edit `/data/caseStudies.ts` — add case study content
+3. Add images to `/public/images/[project-name]/`
+4. Push to `dev`, test on preview URL, merge to `main`
+
+---
+
+## Restore Figma images
+
+Images are excluded from git (large files). To restore from the original Figma source:
+
+1. Place `Porfolio.fig` and `Game_UXR.fig` in the project root
+2. Run:
+
+```bash
+bash scripts/extract-figma-images.sh
+```
+
+Rename extracted images as documented in the script output.
+
+---
+
+## Local development
+
+```bash
+cp .env.example .env.local   # fill in PORTFOLIO_PASSWORD and NEXT_PUBLIC_RESUME_LINK
+npm install
+npm run dev
+```
+
+## Environment variables
+
+| Variable | Description |
+|---|---|
+| `PORTFOLIO_PASSWORD` | Password to unlock case studies |
+| `NEXT_PUBLIC_RESUME_LINK` | Google Drive resume URL |
+
+Set both in Vercel → Settings → Environment Variables for Production + Preview + Development.
+
+---
+
+## Branch structure
+
+| Branch | Purpose |
+|---|---|
+| `main` | Production — Vercel deploys from here |
+| `dev` | Integration — all PRs merge here first |
+| `feature/*` | Individual feature branches |
